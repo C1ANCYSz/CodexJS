@@ -1,0 +1,36 @@
+{
+  "name": "voidz",
+  "version": "1.0.0",
+  "description": "Lightweight TypeScript-first Express framework with DI, decorators, and MVC.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "framework",
+    "dependency injection",
+    "di",
+    "decorators",
+    "mvc"
+  ],
+  "author": "Clancy",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.1.0",
+    "reflect-metadata": "^0.2.2",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.4",
+    "@types/node": "^24.9.1",
+    "typescript": "^5.9.3"
+  }
+}
