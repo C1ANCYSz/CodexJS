@@ -1,6 +1,6 @@
 # Codex JS
 
-![Codex JS](https://raw.githubusercontent.com/C1ANCYSz/CodexJS/main/assets/codex-wide.jpg)
+![Codex JS](https://raw.githubusercontent.com/C1ANCYSz/CodexJS/main/assets/codex-wide.png)
 
 A TypeScript-first web framework built on Express.js that brings decorator-based routing and dependency injection to Node.js applications.
 
