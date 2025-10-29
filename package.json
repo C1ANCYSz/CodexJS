@@ -1,7 +1,7 @@
 {
-  "name": "voidz",
+  "name": "codex-js",
   "version": "1.0.0",
-  "description": "Lightweight TypeScript-first Express framework with DI, decorators, and MVC.",
+  "description": "Lightweight TypeScript-first Express framework with DI, decorators, and a hybrid architecture.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -23,7 +23,7 @@
   "author": "Clancy",
   "license": "MIT",
   "type": "module",
-  "dependencies": {
+  "peerDependencies": {
     "express": "^5.1.0",
     "reflect-metadata": "^0.2.2",
     "typedi": "^0.10.0"
