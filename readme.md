@@ -58,7 +58,7 @@ npm install
 Install Codex and required dependencies:
 
 ```bash
-npm install codex-js
+npm install codex-js-core
 npm install -D @types/express @types/node typescript
 ```
 
@@ -115,7 +115,7 @@ my-app/
 
 ```typescript
 import 'reflect-metadata'
-import codex, { Controller, Get, Module } from 'codex-js'
+import codex, { Controller, Get, Module } from 'codex-js-core'
 
 @Controller('/api/users')
 class UserController {
@@ -843,7 +843,7 @@ type ExtendedRequest<K extends string, T> = Request & {
 **Example:**
 
 ```typescript
-import { Request, ExtendedRequest } from 'codex-js'
+import { Request, ExtendedRequest } from 'codex-js-core'
 
 // Define custom request type
 type AuthRequest = ExtendedRequest<'user', {
@@ -954,7 +954,7 @@ import codex, {
   Delete,
   Request,
   Response,
-} from 'codex-js'
+} from 'codex-js-core'
 
 // Models
 interface User {
@@ -1109,7 +1109,7 @@ Organizing a larger application with multiple modules:
 
 ```typescript
 import 'reflect-metadata'
-import codex from 'codex-js'
+import codex from 'codex-js-core'
 import cors from 'cors'
 import helmet from 'helmet'
 
@@ -1189,7 +1189,7 @@ app.listen(PORT, () => {
 
 ```typescript
 import { Request, Response, NextFunction, RequestHandler } from 'express'
-import { ExtendedRequest, ProtectedRequest } from 'codex-js'
+import { ExtendedRequest, ProtectedRequest } from 'codex-js-core'
 
 // Custom middleware
 const requestLogger: RequestHandler = (req, res, next) => {
@@ -1408,7 +1408,7 @@ describe('UserService', () => {
 
 ```typescript
 import request from 'supertest'
-import codex from 'codex-js'
+import codex from 'codex-js-core'
 import { AppModule } from './app.module'
 
 describe('UserController', () => {
@@ -1506,7 +1506,7 @@ Solution: Make sure you import `reflect-metadata` at the top of your entry file
 
 ```typescript
 import 'reflect-metadata' // Must be first import
-import codex from 'codex-js'
+import codex from 'codex-js-core'
 ```
 
 **Issue: "Route not found after registration"**
@@ -1582,7 +1582,7 @@ app.listen(3000)
 
 ```typescript
 import 'reflect-metadata'
-import codex, { Controller, Service, Module, Get, Post } from 'codex-js'
+import codex, { Controller, Service, Module, Get, Post } from 'codex-js-core'
 
 @Service()
 class UserService {

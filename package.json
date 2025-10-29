@@ -1,5 +1,5 @@
 {
-  "name": "codex-js",
+  "name": "codex-js-core",
   "version": "1.0.0",
   "description": "Lightweight TypeScript-first Express framework with DI, decorators, and a hybrid architecture.",
   "main": "dist/index.js",
@@ -32,5 +32,13 @@
     "@types/express": "^5.0.4",
     "@types/node": "^24.9.1",
     "typescript": "^5.9.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C1ANCYSz/CodexJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/C1ANCYSz/CodexJS/issues"
+  },
+  "homepage": "https://github.com/C1ANCYSz/CodexJS#readme"
 }
