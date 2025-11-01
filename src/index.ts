@@ -163,7 +163,7 @@ export class Codex {
           const { controllers = [], providers = [] } = metadata
 
           providers.forEach((provider) => {
-            if (!Container.has(provider)) Container.set(provider, new provider())
+            if (!Container.has(provider)) Container.get(provider)
           })
 
           if (controllers.length > 0) {
@@ -243,7 +243,7 @@ export class Codex {
   private registerProviders(providers: readonly InjectableClass[]) {
     providers.forEach((provider) => {
       if (!Container.has(provider)) {
-        Container.get(provider) // let TypeDI instantiate properly
+        Container.get(provider)
         console.log(`✓ Registered provider: ${provider.name}`)
       }
     })
