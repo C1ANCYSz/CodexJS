@@ -58,7 +58,7 @@ npm install
 Install Codex and required dependencies:
 
 ```bash
-npm install codexjs-core
+npm install @codex-js/core
 npm install -D @types/express @types/node typescript
 ```
 
@@ -119,7 +119,7 @@ my-app/
 ### Hello World Example
 
 ```typescript
-import codex, { Controller, Get, Module } from 'codexjs-core'
+import codex, { Controller, Get, Module } from '@codex-js/core'
 
 @Controller('/api/users')
 class UserController {
@@ -847,7 +847,7 @@ type ExtendedRequest<K extends string, T> = Request & {
 **Example:**
 
 ```typescript
-import { Request, ExtendedRequest } from 'codexjs-core'
+import { Request, ExtendedRequest } from '@codex-js/core'
 
 // Define custom request type
 type AuthRequest = ExtendedRequest<'user', {
@@ -957,7 +957,7 @@ import codex, {
   Delete,
   Request,
   Response,
-} from 'codexjs-core'
+} from '@codex-js/core'
 
 // Models
 interface User {
@@ -1111,7 +1111,7 @@ app.listen(3000, () => {
 Organizing a larger application with multiple modules:
 
 ```typescript
-import codex from 'codexjs-core'
+import codex from '@codex-js/core'
 import cors from 'cors'
 import helmet from 'helmet'
 
@@ -1191,7 +1191,7 @@ app.listen(PORT, () => {
 
 ```typescript
 import { Request, Response, NextFunction, RequestHandler } from 'express'
-import { ExtendedRequest, ProtectedRequest } from 'codexjs-core'
+import { ExtendedRequest, ProtectedRequest } from '@codex-js/core'
 
 // Custom middleware
 const requestLogger: RequestHandler = (req, res, next) => {
@@ -1410,7 +1410,7 @@ describe('UserService', () => {
 
 ```typescript
 import request from 'supertest'
-import codex from 'codexjs-core'
+import codex from '@codex-js/core'
 import { AppModule } from './app.module'
 
 describe('UserController', () => {
@@ -1508,7 +1508,7 @@ Solution: Make sure you import `reflect-metadata` at the top of your entry file
 
 ```typescript
 // Must be first import
-import codex from 'codexjs-core'
+import codex from '@codex-js/core'
 ```
 
 **Issue: "Route not found after registration"**
@@ -1583,7 +1583,7 @@ app.listen(3000)
 **After (Codex):**
 
 ```typescript
-import codex, { Controller, Service, Module, Get, Post } from 'codexjs-core'
+import codex, { Controller, Service, Module, Get, Post } from '@codex-js/core'
 
 @Service()
 class UserService {

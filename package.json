@@ -1,6 +1,6 @@
 {
-  "name": "codexjs-core",
-  "version": "1.0.1",
+  "name": "@codex-js/core",
+  "version": "1.0.0",
   "description": "Lightweight TypeScript-first Express framework with DI, decorators, and a hybrid architecture.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
