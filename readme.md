@@ -58,7 +58,7 @@ npm install
 Install Codex and required dependencies:
 
 ```bash
-npm install codex-js-core
+npm install codexjs-core
 npm install -D @types/express @types/node typescript
 ```
 
@@ -90,8 +90,6 @@ The scaffolding tool creates this structure automatically:
 
 ```
 my-app/
-├── app.ts                  # Application entry point
-├── server.ts              # Server configuration
 ├── src/
 │   ├── core/              # Core utilities
 │   │   ├── constants/
@@ -104,18 +102,24 @@ my-app/
 │   │   ├── redis/
 │   │   ├── sockets/
 │   │   └── .../
-│   └── modules/           # Feature modules
-│       ├── users/
-│       ├── products/
-│       └── .../
+│   ├── modules/           # Feature modules
+│   │    ├── users/
+│   │    ├── products/
+│   │    └── .../
+│   │
+│   ├── app.ts             # Application entry point
+│   │
+│   └── server.ts          # Server configuration
+│
 └── package.json
+
+
 ```
 
 ### Hello World Example
 
 ```typescript
-import 'reflect-metadata'
-import codex, { Controller, Get, Module } from 'codex-js-core'
+import codex, { Controller, Get, Module } from 'codexjs-core'
 
 @Controller('/api/users')
 class UserController {
@@ -843,7 +847,7 @@ type ExtendedRequest<K extends string, T> = Request & {
 **Example:**
 
 ```typescript
-import { Request, ExtendedRequest } from 'codex-js-core'
+import { Request, ExtendedRequest } from 'codexjs-core'
 
 // Define custom request type
 type AuthRequest = ExtendedRequest<'user', {
@@ -942,7 +946,6 @@ class ProfileController {
 A full CRUD application with repository, service, and controller layers:
 
 ```typescript
-import 'reflect-metadata'
 import codex, {
   Controller,
   Service,
@@ -954,7 +957,7 @@ import codex, {
   Delete,
   Request,
   Response,
-} from 'codex-js-core'
+} from 'codexjs-core'
 
 // Models
 interface User {
@@ -1108,8 +1111,7 @@ app.listen(3000, () => {
 Organizing a larger application with multiple modules:
 
 ```typescript
-import 'reflect-metadata'
-import codex from 'codex-js-core'
+import codex from 'codexjs-core'
 import cors from 'cors'
 import helmet from 'helmet'
 
@@ -1189,7 +1191,7 @@ app.listen(PORT, () => {
 
 ```typescript
 import { Request, Response, NextFunction, RequestHandler } from 'express'
-import { ExtendedRequest, ProtectedRequest } from 'codex-js-core'
+import { ExtendedRequest, ProtectedRequest } from 'codexjs-core'
 
 // Custom middleware
 const requestLogger: RequestHandler = (req, res, next) => {
@@ -1408,7 +1410,7 @@ describe('UserService', () => {
 
 ```typescript
 import request from 'supertest'
-import codex from 'codex-js-core'
+import codex from 'codexjs-core'
 import { AppModule } from './app.module'
 
 describe('UserController', () => {
@@ -1505,8 +1507,8 @@ Solution: Ensure `experimentalDecorators` and `emitDecoratorMetadata` are enable
 Solution: Make sure you import `reflect-metadata` at the top of your entry file
 
 ```typescript
-import 'reflect-metadata' // Must be first import
-import codex from 'codex-js-core'
+// Must be first import
+import codex from 'codexjs-core'
 ```
 
 **Issue: "Route not found after registration"**
@@ -1581,8 +1583,7 @@ app.listen(3000)
 **After (Codex):**
 
 ```typescript
-import 'reflect-metadata'
-import codex, { Controller, Service, Module, Get, Post } from 'codex-js-core'
+import codex, { Controller, Service, Module, Get, Post } from 'codexjs-core'
 
 @Service()
 class UserService {
